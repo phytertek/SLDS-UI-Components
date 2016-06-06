@@ -1,0 +1,4 @@
+<aura:documentation>
+	<aura:description>Basic LDS image component.</aura:description>
+	<aura:example name="Image" ref="c:ex_ui_Image" label="Image"></aura:example>
+</aura:documentation>

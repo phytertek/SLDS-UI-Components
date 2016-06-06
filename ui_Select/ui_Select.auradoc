@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>Basic select component in SLDS. Contains an options attribute which is a list of options to be shown.</aura:description>
+	<aura:example name="Select" ref="c:ex_ui_Select" label="Select">
+	</aura:example>
+</aura:documentation>

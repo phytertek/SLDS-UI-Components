@@ -1,0 +1,2 @@
+<aura:component access="GLOBAL" implements="c:ui_int_HTML_Attributes,c:ui_int_Icon_Attributes">
+</aura:component>

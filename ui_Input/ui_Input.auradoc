@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>Basic input control in SLDS.</aura:description>
+	<aura:example name="Input" ref="c:ex_ui_Input" label="Input">
+	</aura:example>
+</aura:documentation>

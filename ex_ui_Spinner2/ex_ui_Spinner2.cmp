@@ -1,0 +1,5 @@
+<aura:component access="GLOBAL">
+    <c:ui_SLDS >
+		<c:ui_Spinner size="large" theme="brand"/>
+    </c:ui_SLDS>
+</aura:component>

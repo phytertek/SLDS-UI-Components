@@ -1,0 +1,175 @@
+<aura:component >
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+
+	<aura:attribute name="inFocus" type="Boolean" default="false" description="Is element in focus? Default is false." access="GLOBAL" />
+
+	<aura:attribute name="currentValue" type="String" description="Current value of field." />
+	<aura:attribute name="calendarState" type="Object" description="Currently displayed calendar object." />
+
+	<c:ui_Input value="{! v.currentValue }" iconName="event" iconType="utility" iconPosition="right" onFocus="{! c.toggleCalendar }" onLostFocus="{! c.toggleCalendar }" />
+
+	<div aura:id="calendar-element" class="slds-datepicker slds-dropdown slds-dropdown--left slds-hidden" aria-hidden="false">
+  		<div class="slds-datepicker__filter slds-grid">
+    		<div class="slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-grow">
+     			 <div class="slds-align-middle">
+        			<c:ui_Button onClick="{! c.buttonClick }" iconSize="small" iconType="utility" iconName="left" iconPosition="center" iconContainer="true" xsmall="true"></c:ui_Button>
+      			</div>
+      			<h2 id="month" class="slds-align-middle" aria-live="assertive" aria-atomic="true">June</h2>
+      			<div class="slds-align-middle">
+      				<c:ui_Button onClick="{! c.buttonClick }" iconSize="small" iconType="utility" iconName="right" iconPosition="center" iconContainer="true" xsmall="true"></c:ui_Button>
+      			</div>
+    		</div>
+    		<div class="slds-shrink-none">
+        		<c:ui_Select options="2014,2015,2016" />
+    		</div>
+  		</div>
+  		<table class="datepicker__month" role="grid" aria-labelledby="month">
+    		<thead>
+      			<tr id="weekdays">
+        			<th id="Sunday" scope="col">
+          				<abbr title="Sunday">Sun</abbr>
+        			</th>
+        			<th id="Monday" scope="col">
+          				<abbr title="Monday">Mon</abbr>
+        			</th>
+			        <th id="Tuesday" scope="col">
+			        	<abbr title="Tuesday">Tue</abbr>
+			        </th>
+			        <th id="Wednesday" scope="col">
+			        	<abbr title="Wednesday">Wed</abbr>
+			        </th>
+			        <th id="Thursday" scope="col">
+			        	<abbr title="Thursday">Thu</abbr>
+			        </th>
+			        <th id="Friday" scope="col">
+			        	<abbr title="Friday">Fri</abbr>
+			        </th>
+			        <th id="Saturday" scope="col">
+			        	<abbr title="Saturday">Sat</abbr>
+			        </th>
+      			</tr>
+    		</thead>
+    		<tbody>
+      			<tr>
+			        <td class="slds-disabled-text" headers="Sunday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">31</span>
+			        </td>
+			        <td headers="Monday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">1</span>
+			        </td>
+			        <td headers="Tuesday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">2</span>
+			        </td>
+			        <td headers="Wednesday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">3</span>
+			        </td>
+			        <td headers="Thursday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">4</span>
+			        </td>
+			        <td headers="Friday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">5</span>
+			        </td>
+			        <td headers="Saturday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">6</span>
+			        </td>
+		      	</tr>
+		        <tr>
+			        <td headers="Sunday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">7</span>
+			        </td>
+			        <td headers="Monday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">8</span>
+			        </td>
+			        <td headers="Tuesday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">9</span>
+			        </td>
+			        <td headers="Wednesday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">10</span>
+			        </td>
+			        <td headers="Thursday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">11</span>
+			        </td>
+			        <td headers="Friday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">12</span>
+			        </td>
+			        <td headers="Saturday" role="gridcell" aria-disabled="true">
+			        	<span class="slds-day">13</span>
+			        </td>
+		        </tr>
+				<tr>
+					<td headers="Sunday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">14</span>
+					</td>
+					<td headers="Monday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">15</span>
+					</td>
+					<td headers="Tuesday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">16</span>
+					</td>
+					<td headers="Wednesday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">17</span>
+					</td>
+					<td class="slds-is-today" headers="Thursday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">18</span>
+					</td>
+					<td headers="Friday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">19</span>
+					</td>
+					<td headers="Saturday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">20</span>
+					</td>
+				</tr>
+				<tr>
+					<td headers="Sunday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">21</span>
+					</td>
+					<td headers="Monday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">22</span>
+					</td>
+					<td headers="Tuesday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">23</span>
+					</td>
+					<td headers="Wednesday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">24</span>
+					</td>
+					<td headers="Thursday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">25</span>
+					</td>
+					<td headers="Friday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">26</span>
+					</td>
+					<td headers="Saturday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">27</span>
+					</td>
+				</tr>
+				<tr>
+					<td headers="Sunday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">28</span>
+					</td>
+					<td headers="Monday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">29</span>
+					</td>
+					<td headers="Tuesday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">30</span>
+					</td>
+					<td class="slds-disabled-text" headers="Wednesday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">1</span>
+					</td>
+					<td class="slds-disabled-text" headers="Thursday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">2</span>
+					</td>
+					<td class="slds-disabled-text" headers="Friday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">3</span>
+					</td>
+					<td class="slds-disabled-text" headers="Saturday" role="gridcell" aria-disabled="true">
+						<span class="slds-day">4</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7" role="gridcell"><a href="javascript:void(0);" class="slds-show--inline-block slds-p-bottom--x-small">Today</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</aura:component>

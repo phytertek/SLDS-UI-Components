@@ -1,0 +1,26 @@
+<aura:component >
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    
+	<c:ui_SLDS >    
+        
+        <h1 class="slds-text-heading--large">Basic Input and Events</h1>
+        <c:ui_Input label="Name" value="{! v.value }" onChange="{! c.onChange }" />
+        <c:ui_Input label="Address" placeholder="Enter Address Here" />
+        <c:ui_Input label="Email" type="email" value="{! v.email }" onFocus="{! c.gotFocus }" onLostFocus="{! c.lostFocus }"/>
+        
+        <h1>Name : {! v.value }</h1>
+        
+        <h1 class="slds-text-heading--large">Input with icons</h1>
+        <c:ui_Input placeholder="Search" iconName="search" iconType="utility" class="margin-b-20" />
+        <c:ui_Input placeholder="Search" iconName="search" iconType="utility" iconPosition="right" />
+        
+        <h1 class="slds-text-heading--large">Input with properties</h1>
+        <c:ui_Input label="Name" required="true" />
+        <c:ui_Input label="Address" disabled="true" />
+        <c:ui_Input label="Email" readOnly="true" value="test@test.com"/>
+        
+        <h1 class="slds-text-heading--large">Input with Error</h1>
+        <c:ui_Input label="Name" required="true" error="This field is required." />
+    </c:ui_SLDS>
+</aura:component>

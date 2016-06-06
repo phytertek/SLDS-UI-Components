@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>An HTML anchor element that fires an event.</aura:description>
+	<aura:example name="Link" ref="c:ex_ui_Link" label="Link">
+		Example Description
+	</aura:example>
+</aura:documentation>

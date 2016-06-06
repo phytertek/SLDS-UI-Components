@@ -1,0 +1,92 @@
+<aura:component >
+	<c:ui_SLDS >
+        <div class="slds-container--fluid">
+            <div class="slds-m-around-large">
+                <h1 class="slds-text-heading--large">Automatic Sizing</h1>
+                
+                <h2 class="slds-text-heading--medium">Normal</h2>
+                <c:ui_Grid >
+                    <c:ui_Col class="blue">Column 1</c:ui_Col>
+                	<c:ui_Col class="blue">Column 2</c:ui_Col>
+                    <c:ui_Col class="blue">Column 3</c:ui_Col>
+                </c:ui_Grid>
+                
+                <h2 class="slds-text-heading--medium">Padded</h2>
+                <c:ui_Grid >
+                    <c:ui_Col class="blue" padding="large">Column 1</c:ui_Col>
+                	<c:ui_Col class="blue" padding="large">Column 2</c:ui_Col>
+                    <c:ui_Col class="blue" padding="large">Column 3</c:ui_Col>
+                </c:ui_Grid>
+                
+                <h1 class="slds-text-heading--large">Manual Sizing</h1>
+                
+                <h2 class="slds-text-heading--medium">Default Columns is 12</h2>
+                <c:ui_Grid >
+                    <c:ui_Col class="blue" size="2">Column 2 of 12</c:ui_Col>
+                	<c:ui_Col class="blue" size="6">Column 6 of 12</c:ui_Col>
+                    <c:ui_Col class="blue" size="4">Column 4 of 12</c:ui_Col>
+                </c:ui_Grid>
+                
+                <h2 class="slds-text-heading--medium">Default Columns can be changed</h2>
+                <c:ui_Grid >
+                    <c:ui_Col class="blue" size="1" columns="5">Column 1 of 5</c:ui_Col>
+                	<c:ui_Col class="blue" size="1" columns="5">Column 1 of 5</c:ui_Col>
+                    <c:ui_Col class="blue" size="3" columns="5">Column 3 of 5</c:ui_Col>
+                </c:ui_Grid>
+                
+                <h2 class="slds-text-heading--medium">The Grid is wrapped by default.</h2>
+                <c:ui_Grid >
+                    <c:ui_Col class="blue" size="1" columns="5">Column 1 of 5</c:ui_Col>
+                	<c:ui_Col class="blue" size="1" columns="5">Column 1 of 5</c:ui_Col>
+                    <c:ui_Col class="blue" size="3" columns="5">Column 3 of 5</c:ui_Col>
+                    <c:ui_Col class="blue" size="4" columns="12">Column 4 of 12</c:ui_Col>
+                	<c:ui_Col class="blue" size="6" columns="12">Column 6 of 12</c:ui_Col>
+                    <c:ui_Col class="blue" size="2" columns="12">Column 2 of 12</c:ui_Col>
+                </c:ui_Grid>
+                
+                <h1 class="slds-text-heading--large">Alignment can also be specified</h1>
+                
+                <h2 class="slds-text-heading--medium">Horizonal Alignment</h2>
+                <c:ui_Grid horizontal="center">
+                    <c:ui_Col class="blue">Center</c:ui_Col>
+                </c:ui_Grid>
+                <c:ui_Grid horizontal="space">
+                    <c:ui_Col class="blue">Space</c:ui_Col>
+                </c:ui_Grid>
+                <c:ui_Grid horizontal="end">
+                    <c:ui_Col class="blue">End</c:ui_Col>
+                </c:ui_Grid>
+                <c:ui_Grid horizontal="spread">
+                    <c:ui_Col class="blue">Spread</c:ui_Col>
+                    <c:ui_Col class="blue">Spread</c:ui_Col>
+                    <c:ui_Col class="blue">Spread</c:ui_Col>
+                </c:ui_Grid>
+                
+                <h2 class="slds-text-heading--medium">Vertical Alignment</h2>
+                <c:ui_Grid vertical="center" class="border height-300">
+                    <c:ui_Col class="blue">Center</c:ui_Col>
+                </c:ui_Grid>
+                <c:ui_Grid vertical="stretch" class="border height-300">
+                    <c:ui_Col class="blue">stretch</c:ui_Col>
+                </c:ui_Grid>
+                <c:ui_Grid vertical="end" class="border height-300">
+                    <c:ui_Col class="blue">End</c:ui_Col>
+                </c:ui_Grid>
+                
+                <h2 class="slds-text-heading--medium">Cells could also have vertical alignment.</h2>
+                <c:ui_Grid class="border height-300">
+                    <c:ui_Col class="blue" vertical="top">Top</c:ui_Col>
+                    <c:ui_Col class="blue" vertical="middle">Middle</c:ui_Col>
+                    <c:ui_Col class="blue" vertical="bottom">Bottom</c:ui_Col>
+                </c:ui_Grid>
+                
+                <h1 class="slds-text-heading--large">Cell Ordering</h1>
+                <c:ui_Grid class="slds-p-around-large border height-300">
+                    <c:ui_Col class="blue" order="3">Cell 1</c:ui_Col>
+                    <c:ui_Col class="blue" order="2">Cell 2</c:ui_Col>
+                    <c:ui_Col class="blue" order="1">Cell 3</c:ui_Col>
+                </c:ui_Grid>
+            </div>
+        </div>
+    </c:ui_SLDS>
+</aura:component>

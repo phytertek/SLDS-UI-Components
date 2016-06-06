@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>Page headers are used at the top of several page types. The body of the page header component will contain the detail information at the bottom of the header.</aura:description>
+	<aura:example name="Header" ref="c:ex_ui_Page_Header" label="Header">
+	</aura:example>
+</aura:documentation>

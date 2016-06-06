@@ -1,0 +1,9 @@
+<aura:component >
+    <c:ui_SLDS >
+		<c:ui_Button_Group >
+            <c:ui_Button theme="neutral">Action 1</c:ui_Button>
+            <c:ui_Button theme="neutral">Action 2</c:ui_Button>
+            <c:ui_Button theme="neutral">Action 3</c:ui_Button>
+        </c:ui_Button_Group>
+    </c:ui_SLDS>
+</aura:component>

@@ -1,0 +1,14 @@
+<aura:component >
+	<c:ui_SLDS >
+		<c:ui_Button onClick="{! c.buttonClick }">Basic Button</c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" theme="neutral">Neutral Button</c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" theme="brand">Brand Button</c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" theme="destructive">Destructive Button</c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" theme="inverse">Inverse Button</c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" theme="neutral" disabled="true">Disabled Button</c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" theme="neutral" iconPosition="left" iconType="utility" iconName="download"  iconContainer="true">Icon Button</c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" theme="neutral" iconPosition="right" iconType="utility" iconName="download"  iconContainer="true">Icon Button</c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" iconSize="large" iconType="utility" iconName="settings" iconPosition="center"></c:ui_Button>
+		<c:ui_Button onClick="{! c.buttonClick }" iconSize="x-small" iconType="utility" iconName="down" iconPosition="center" iconContainer="true" class="slds-button--icon-border-filled" xsmall="true"></c:ui_Button>
+	</c:ui_SLDS>
+</aura:component>

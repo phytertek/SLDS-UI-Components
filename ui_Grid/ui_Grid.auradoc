@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>SLDS Grid System. Uses the c:ui_Grid and c:ui_Col components.</aura:description>
+	<aura:example name="Grid" ref="c:ex_ui_Grid" label="Grid">
+	</aura:example>
+</aura:documentation>

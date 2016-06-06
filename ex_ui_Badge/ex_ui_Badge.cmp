@@ -1,0 +1,6 @@
+<aura:component >
+	<c:ui_SLDS >
+		<c:ui_Badge onClick="{! c.badgeClicked }">Basic</c:ui_Badge>
+        <c:ui_Badge theme="inverse">Inverse Theme</c:ui_Badge>
+    </c:ui_SLDS>
+</aura:component>

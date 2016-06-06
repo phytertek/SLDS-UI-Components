@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="A utility event for ui_* components" access="GLOBAL">
+    <aura:attribute name="domEvent" type="Object" access="GLOBAL" />
+    <aura:attribute name="value" type="Object" access="GLOBAL" />
+</aura:event>

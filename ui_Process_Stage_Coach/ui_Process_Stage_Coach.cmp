@@ -1,0 +1,30 @@
+<aura:component access="GLOBAL" >
+	<aura:attribute name="coachingContent" type="Object" description="Content for a stage's coaching panel"/>
+	<aura:attribute name="stageName" type="String" default="" description="Name of stage"/>
+	<aura:attribute name="currentStage" type="String" default="" description="Name of current stage"/>
+	<aura:attribute name="selectedStage" type="String" default="" description="Name of selected stage"/>
+	
+	<div class="{! 'slds-tabs--path__content ' + (v.selectedStage == v.stageName || (v.currentStage == v.stageName &amp;&amp; v.selectedStage == '') ? '' : 'slds-hide')}" role="tabpanel" aria-labelledby="tab-path-4">
+		  <c:ui_Grid horizontal="spread" wrap="false">
+		    <div class="slds-coach__keys slds-size--1-of-2 m--left-x-large">
+		      <div class="slds-grid slds-grid--align-spread">
+		        <h2 class="slds-text-heading--label slds-p-bottom--small">{!v.coachingContent.leftLabel}</h2>
+		      </div>
+		      <dl class="coach__list slds-dl--horizontal">
+		      	<aura:iteration items="{!v.coachingContent.leftContent}" var="item">
+			        <dt class="slds-coach__item slds-dl--horizontal__label">{!item.label}</dt>
+			        <dd class="slds-coach__value slds-dl--horizontal__detail">{!item.value}</dd>
+		      	</aura:iteration>
+		      </dl>
+		    </div>
+		    <div class="slds-coach__guidance slds-size--1-of-2 slds-m-left--x-large">
+		      <h2 class="slds-text-heading--label slds-p-bottom--small slds-has-divider--bottom">{!v.coachingContent.rightLabel}</h2>
+		      <div class="slds-text-longform slds-p-top--medium">
+			      <aura:iteration items="{!v.coachingContent.rightContent}" var="item">
+			      	<p>{!item}</p>
+			      </aura:iteration>
+		      </div>
+		    </div>
+		  </c:ui_Grid>
+		</div>	
+</aura:component>

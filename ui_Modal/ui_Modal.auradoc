@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>This component shows a modal on the screen. The show attribute is used to decide whether the modal should be shown or now.</aura:description>
+	<aura:example name="Modal" ref="c:ex_ui_Modal" label="Modal">
+		<p>These are various examples of the <code>c:ui_Modal</code> component.</p>
+	</aura:example>
+</aura:documentation>

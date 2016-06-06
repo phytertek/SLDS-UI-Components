@@ -1,0 +1,35 @@
+<aura:component >
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<aura:attribute name="stages" type="List"/>
+	<aura:attribute name="currentStage" type="String" default="Stage 3"/>
+
+	<c:ui_SLDS >
+		<c:ui_Grid class="slds-m-around--large">
+
+			<c:ui_Col size="12">
+				<h2 class="slds-text-heading--large slds-m-vertical--medium">Wizard</h2>
+			</c:ui_Col>
+			<c:ui_Col size="12">
+				<c:ui_Process allStages="{!v.stages}" currentStage="{!v.currentStage}"/>
+			</c:ui_Col>
+
+			<c:ui_Col size="12">
+				<h2 class="slds-text-heading--large slds-m-vertical--medium">Path</h2>
+			</c:ui_Col>
+			<c:ui_Col size="12">
+				<c:ui_Process type="path" allStages="{!v.stages}" currentStage="{!v.currentStage}" saveStage="{!c.saveStage}"/>
+			</c:ui_Col>
+
+			<c:ui_Col size="12">
+				<h2 class="slds-text-heading--large slds-m-vertical--medium">Path w/ Coaching</h2>
+			</c:ui_Col>
+			<c:ui_Col size="12">
+				<c:ui_Process type="path" allStages="{!v.stages}" currentStage="{!v.currentStage}" saveStage="{!c.saveStage}" coaching="true"/>
+			</c:ui_Col>
+
+		</c:ui_Grid>
+	</c:ui_SLDS>
+
+</aura:component>

@@ -1,0 +1,9 @@
+<aura:documentation>
+	<aura:description>A basic fullscreen spinner component. Used to indicate that the application is processing. Use the show attribute to show or hide the spinner dynamically.</aura:description>
+	<aura:example name="Spinner" ref="c:ex_ui_Spinner" label="Spinner">
+		<p>A basic <code>c:ui_Spinner</code>.</p>
+	</aura:example>
+    <aura:example name="SpinnerLargeBrand" ref="c:ex_ui_Spinner2" label="Large Spinner with Brand theme">
+		<p>A large <code>c:ui_Spinner</code> with the brand theme.</p>
+	</aura:example>
+</aura:documentation>

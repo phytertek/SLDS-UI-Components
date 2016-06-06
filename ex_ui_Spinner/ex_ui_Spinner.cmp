@@ -1,0 +1,5 @@
+<aura:component access="GLOBAL">
+    <c:ui_SLDS >
+    	<c:ui_Spinner />
+    </c:ui_SLDS>
+</aura:component>

@@ -1,0 +1,31 @@
+<aura:component access="GLOBAL">
+    <c:ui_SLDS >
+        <c:ui_Grid class="slds-m-around--x-large">
+            <c:ui_Col >
+                <c:ui_Button id="buttonRight" theme="brand">Right</c:ui_Button>
+            </c:ui_Col>
+            <c:ui_Col >
+                <c:ui_Button id="buttonTop" theme="brand">Top</c:ui_Button>
+            </c:ui_Col>
+            <c:ui_Col >
+                <c:ui_Button id="buttonBottom" theme="brand">Bottom</c:ui_Button>
+            </c:ui_Col>
+            <c:ui_Col >
+                <c:ui_Button id="buttonLeft" theme="brand">Left</c:ui_Button>
+            </c:ui_Col>
+        </c:ui_Grid>
+        
+        <c:ui_Popover triggerElement="#buttonRight">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi laudantium molestias reprehenderit nostrum quod natus saepe ea corrupti odit minima?</p>
+        </c:ui_Popover>
+        <c:ui_Popover triggerElement="#buttonTop" position="top" theme="info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi laudantium molestias reprehenderit nostrum quod natus saepe ea corrupti odit minima?</p>
+        </c:ui_Popover>
+        <c:ui_Popover triggerElement="#buttonBottom" position="bottom">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi laudantium molestias reprehenderit nostrum quod natus saepe ea corrupti odit minima?</p>
+        </c:ui_Popover>
+        <c:ui_Popover triggerElement="#buttonLeft" triggerEvent="click" triggerStopElement="body" triggerStopEvent="click" position="left" theme="error">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi laudantium molestias reprehenderit nostrum quod natus saepe ea corrupti odit minima?</p>
+        </c:ui_Popover>
+    </c:ui_SLDS>
+</aura:component>

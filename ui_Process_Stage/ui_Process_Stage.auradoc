@@ -1,0 +1,7 @@
+<aura:documentation>
+	<aura:description>This component shows a process on the screen. There are two types; path and wizard, default is wizard. A path type process has the option to include the coaching panel.  The stages of the process are to be supplied in the form of an object list in the order of completion.</aura:description>
+	<aura:example name="Process" ref="c:ex_ui_Process" label="Process">
+		<p>The stages will be supplied to the allStages attribute as an object list. See example helper file for correct format</p>
+		<p>These are various examples of the <code>c:ui_Process</code> component.</p>
+	</aura:example>
+</aura:documentation>

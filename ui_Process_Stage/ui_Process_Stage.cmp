@@ -1,0 +1,29 @@
+<aura:component access="GLOBAL" implements="c:ui_int_HTML_Attributes,c:ui_int_Icon_Attributes">
+	
+	<aura:attribute name="stageName" type="String" default="" access="GLOBAL" description="Stage label"/>
+
+	<aura:attribute name="stageIndex" type="String" default="" access="GLOBAL" description="Stage index in list of stages"/>
+
+	<aura:attribute name="currentSelected" type="String" default="" access="GLOBAL" description="Currently selected stage"/>
+
+	<aura:attribute name="currentName" type="String" default="" access="GLOBAL" description="Current stage label"/>
+
+	<aura:attribute name="currentIndex" type="String" default="" access="GLOBAL" description="Current stage index in list of stages"/>
+
+	<aura:registerEvent name="selectStage" type="c:ui_Event" description="Event fired when input element is changed" access="GLOBAL"/>
+
+	<li class="{! 'slds-tabs--path__item ' + 
+		    			(v.stageIndex gt v.currentIndex ? 'slds-is-incomplete ' : '' ) + 
+		    			(v.stageIndex lt v.currentIndex ? 'slds-is-complete ' : '' ) + 
+		    			(v.stageIndex eq v.currentIndex ? 'slds-is-current ' : '') + 
+		    			(v.stageName eq v.currentSelected ? 'slds-is-active' : '')}" 
+		  role="presentation">
+		
+		  <c:ui_Link class="slds-tabs--path__link" onClick="{! c.selectStage }">
+      	<c:ui_Icon iconName="check" iconType="utility" iconSize="x-small" iconContainer="true" iconContainerClass="slds-tabs--path__stage"/>
+      <span class="slds-tabs--path__title">{! v.stageName }</span>
+    	</c:ui_Link>
+
+	</li>
+
+</aura:component>

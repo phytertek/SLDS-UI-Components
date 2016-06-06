@@ -1,0 +1,19 @@
+<aura:documentation>
+	<aura:description>Button component in SLDS</aura:description>
+	<aura:example name="Buttons" ref="c:ex_ui_Button" label="Button">
+        <p>These are various examples of the <code>c:ui_Button</code> component</p>
+        <pre>
+			&lt;c:ui_SLDS&gt;
+			  &lt;c:ui_Button&gt;Basic Button&lt;/c:ui_Button&gt;
+			  &lt;c:ui_Button theme="neutral"&gt;Neutral Button&lt;/c:ui_Button&gt;
+			  &lt;c:ui_Button theme="brand"&gt;Brand Button&lt;/c:ui_Button&gt;
+			  &lt;c:ui_Button theme="destructive"&gt;Destructive Button&lt;/c:ui_Button&gt;
+			  &lt;c:ui_Button theme="inverse"&gt;Inverse Button&lt;/c:ui_Button&gt;
+			  &lt;c:ui_Button theme="neutral" disabled="true"&gt;Disabled Button&lt;/c:ui_Button&gt;
+			  &lt;c:ui_Button theme="neutral" iconPosition="left" iconType="utility" iconName="download"&gt;Icon Button&lt;/c:ui_Button&gt;
+			  &lt;c:ui_Button theme="neutral" iconPosition="right" iconType="utility" iconName="download"&gt;Icon Button&lt;/c:ui_Button&gt;
+			  &lt;c:ui_Button iconSize="large" iconType="utility" iconName="settings"&gt;&lt;/c:ui_Button&gt;
+			&lt;/c:ui_SLDS&gt;
+        </pre>
+	</aura:example>
+</aura:documentation>

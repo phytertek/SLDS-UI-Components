@@ -1,0 +1,40 @@
+<aura:component access="GLOBAL" implements="c:ui_int_HTML_Attributes">
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:handler name="change" value="{! v.value }" action="{! c.init }"/>
+
+    <aura:attribute name="name" type="String" required="true" description="Name of the radiobutton set. Must be unique for a group of radio buttons." access="GLOBAL" />
+    <aura:attribute name="label" type="String" default="" description="Label for radio buttons" access="GLOBAL" />
+    <aura:attribute name="options" type="String[]" description="List of options to be shown" access="GLOBAL" />
+    <aura:attribute name="value" type="String" default="" description="Selected Option" access="GLOBAL" />
+
+	<aura:attribute name="required" type="Boolean" default="false" description="Is this field required? Displays a star next to the label. Does not actually perform the validation" access="GLOBAL" />
+    <aura:attribute name="disabled" type="Boolean" default="false" description="Is this field disabled?" access="GLOBAL" />
+    
+    <aura:attribute name="error" type="String" default="" description="The error message." access="GLOBAL" />    
+    
+    <aura:attribute name="mappedBody" type="Aura.Component[]" description="Private - Used for manual components" access="PRIVATE" />
+    
+    <aura:registerEvent name="onChange" type="c:ui_Event" description="DOM event which is executed when the radio button is changed." access="GLOBAL" />
+    
+    <fieldset class="{! 'slds-form-element'
+                     	+ ' ' + (v.required ? 'is-required' : '')
+                     	+ ' ' + (v.error != '' ? 'slds-has-error' : '')
+                     	+ ' ' + v.class }" id="{! v.id }">
+        <legend class="form-element__legend slds-form-element__label">
+            <aura:if isTrue="{! v.required }"><abbr class="slds-required" title="required">*</abbr></aura:if>
+            {! v.label }</legend>
+        <div class="slds-form-element__control">
+            <aura:iteration items="{! v.options }" var="opt">
+                <c:ui_Radio_Button name="{! v.name }" label="{! opt }" 
+                                  selected="{! v.value == opt ? true : false }" 
+                                  onChange="{! c.onChange }" 
+                                  disabled="{! v.disabled }"/>
+            </aura:iteration>
+            {! v.mappedBody }
+        </div>
+        <aura:if isTrue="{! v.error != ''}">
+        	<div class="slds-form-element__help">{! v.error }</div>
+        </aura:if>
+    </fieldset>
+</aura:component>

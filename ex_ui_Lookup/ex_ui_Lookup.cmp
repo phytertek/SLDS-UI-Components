@@ -1,0 +1,40 @@
+<aura:component access="GLOBAL">
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:attribute name="listOfObjects" type="Object[]" description="A sample list of objects." access="PRIVATE"/> 
+    <aura:attribute name="listOfNumbers" type="Object[]" description="A sample list of numbers." access="PRIVATE"/> 
+    <aura:attribute name="selectedNumber" type="Object" description="The number that was selected." access="PRIVATE"/> 
+
+    <aura:attribute name="listOfSuperHeroes" type="Object[]" description="A sample list of numbers." access="PRIVATE"/> 
+    <aura:attribute name="selectedHeroes" type="Object[]" description="The number that was selected." access="PRIVATE"/> 
+    <aura:attribute name="herosSearchString" type="String" description="The heroes search string" access="PRIVATE"/> 
+    
+    <c:ui_SLDS >
+        <c:ui_Grid class="height-320">
+            <c:ui_Col size="1" />
+            <c:ui_Col size="2">
+                <c:ui_Lookup label="Numbers" items="One,Two,Three"/>
+            </c:ui_Col>
+            <c:ui_Col size="1" />
+            <c:ui_Col size="3">
+                <c:ui_Lookup label="Accounts" items="Account 1,Account 2,Account 3" defaultIconType="standard" defaultIconName="account" />
+            </c:ui_Col>
+            <c:ui_Col size="1" />
+            <c:ui_Col size="3">
+                <c:ui_Lookup label="Objects" items="{! v.listOfObjects }" />
+            </c:ui_Col>
+            <c:ui_Col size="1" />
+        </c:ui_Grid>
+        <c:ui_Grid class="height-320">
+            <c:ui_Col size="1" />
+            <c:ui_Col size="2">
+                <c:ui_Lookup label="Numbers" items="{! v.listOfNumbers }" defaultIconType="standard" defaultIconName="opportunity" onChange="{! c.numbersChanged }" onSelect="{! c.numberSelected }" selected="{! v.selectedNumber }" onRemove="{! c.resetSelectedNumber }"/>
+            </c:ui_Col>
+            <c:ui_Col size="1" />
+            <c:ui_Col size="2">
+                <c:ui_Lookup label="Heroes" items="{! v.listOfSuperHeroes }" searchString="{! v.herosSearchString }" onChange="{! c.heroesFilterChanged }" onSelect="{! c.heroSelected }" selected="{! v.selectedHeroes }" onRemove="{! c.removeHero }"/>
+            </c:ui_Col>
+            <c:ui_Col size="1" />
+        </c:ui_Grid>
+    </c:ui_SLDS> 
+</aura:component>

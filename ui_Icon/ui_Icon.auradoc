@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>ui_Icon Doc</aura:description>
+	<aura:example name="Icons" ref="c:ex_ui_Icon" label="Icons">
+	</aura:example>
+</aura:documentation>

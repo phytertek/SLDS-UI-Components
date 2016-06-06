@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>A tree component in SLDS. A c:ui_Tree component is used along with an c:ui_Tree_Node component. Each tree node represents a single node in a tree. A tree can be created manually by providing an hierarchy of tree nodes in the body or can also be created using the nodes attribute on the tree which represents an Object which is a node hierarchy. A node can be opened (expanded) or closed.</aura:description>
+	<aura:example name="Tree" ref="c:ex_ui_Tree" label="Tree">
+	</aura:example>
+</aura:documentation>

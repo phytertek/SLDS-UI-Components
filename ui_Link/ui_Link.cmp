@@ -1,0 +1,10 @@
+<aura:component implements="c:ui_int_HTML_Attributes" access="GLOBAL">
+	<aura:attribute name="href" type="String" default="#void" description="href attribute for &gt;a&lt; tag."/>
+	<aura:attribute name="role"  type="String" description="ARIA role for &gt;a&lt; tag."/>
+
+	<aura:registerEvent name="onClick" type="c:ui_Event" description="Action to be executed when button is clicked" access="GLOBAL"/>
+
+	<a href="{! v.href }" onclick="{! c.onClick }" role="{! v.role }" class="{! v.class }" id="{! v.id }">
+		{! v.body }
+	</a>
+</aura:component>

@@ -1,0 +1,35 @@
+<aura:component access="GLOBAL">
+    <c:ui_SLDS >
+        <c:ui_Page_Header title="Rohde Corp - 80,000 Widgets" subTitleBottom="Mark Jaeckal • Unlimited Customer • 11/13/15" iconName="opportunity" />
+        <c:ui_Page_Header title="Record Title" subTitleTop="Record Type" iconName="user">
+            <aura:set attribute="buttonsFacet">
+                <c:ui_Button iconType="utility" iconName="add" theme="neutral">Follow</c:ui_Button>
+            </aura:set>
+            <aura:set attribute="actionsFacet">
+                <c:ui_Button_Group >
+                    <c:ui_Button theme="neutral">Edit</c:ui_Button>
+                    <c:ui_Button theme="neutral">Delete</c:ui_Button>
+                    <c:ui_Button theme="neutral">Clone</c:ui_Button>
+                </c:ui_Button_Group>
+            </aura:set>
+            <ul class="slds-grid slds-page-header__detail-row">
+                <li class="slds-col--padded slds-size--1-of-4">
+                    <p class="slds-text-heading--label slds-truncate" title="Field 1">Field 1</p>
+                    <p class="slds-text-body--regular slds-truncate" title="Some Value for Field 1">Some Value for Field 1</p>
+                </li>
+                <li class="slds-col--padded slds-size--1-of-4">
+                    <p class="slds-text-heading--label slds-truncate" title="Field 1">Field 2</p>
+                    <p class="slds-text-body--regular slds-truncate" title="Some Value for Field 2">Some Value for Field 2</p>
+                </li>
+                <li class="slds-col--padded slds-size--1-of-4">
+                    <p class="slds-text-heading--label slds-truncate" title="Field 1">Field 3</p>
+                    <p class="slds-text-body--regular slds-truncate" title="Some Value for Field 3">Some Value for Field 3</p>
+                </li>
+                <li class="slds-col--padded slds-size--1-of-4">
+                    <p class="slds-text-heading--label slds-truncate" title="Field 1">Field 4</p>
+                    <p class="slds-text-body--regular slds-truncate" title="Some Value for Field 4">Some Value for Field 4</p>
+                </li>
+            </ul>
+        </c:ui_Page_Header>
+    </c:ui_SLDS>
+</aura:component>

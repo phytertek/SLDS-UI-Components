@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>Alerts are used to notify the users of an important event. An alert can have a close button which can fire the onClose event.</aura:description>
+	<aura:example name="Alert" ref="c:ex_ui_Alert" label="Alert">
+	</aura:example>
+</aura:documentation>

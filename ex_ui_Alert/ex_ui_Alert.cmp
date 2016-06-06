@@ -1,0 +1,7 @@
+<aura:component >
+	<c:ui_SLDS >
+        <c:ui_Alert onClose="{! c.alertClosed }" onClick="{! c.alertClicked }">
+            Basic Alert
+        </c:ui_Alert>
+    </c:ui_SLDS>
+</aura:component>

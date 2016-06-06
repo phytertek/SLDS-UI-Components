@@ -1,0 +1,5 @@
+<aura:component >
+	<c:ui_SLDS >
+		<c:ui_Link aura:id="link" onClick="{! c.clicked }">Click Me!</c:ui_Link>
+	</c:ui_SLDS>-Li_Linkk
+</aura:component>

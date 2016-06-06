@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>Radio Buttons component in SLDS. This includes <code>c:ui_Radio_Button</code> and <code>c:ui_Radio_Button_Group</code>. c:ui_Radio_Button_Group is the parent component and may contain zero or more <code>c:ui_Radio_Button</code>'s. You can either manually create child c:ui_Radio_Button components or automatically create them using the options attribute. The options attribute is a list of strings, each of which would be used to create a child radio button. The name attribute is required and is used as the name of the Radio Button Group. The label attribute will be used as the title for the radio buttons.</aura:description>
+	<aura:example name="RadioButtons" ref="c:ex_ui_Radio_Button_Group" label="Radio Button Group">
+	</aura:example>
+</aura:documentation>

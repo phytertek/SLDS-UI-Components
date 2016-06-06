@@ -1,0 +1,24 @@
+<aura:component access="GLOBAL" implements="c:ui_int_HTML_Attributes,c:ui_int_Icon_Attributes">
+    
+    <aura:attribute name="theme" type="String" access="GLOBAL" description="Theme of button can be either neutral, brand, inverse or destructive" />
+    <aura:attribute name="disabled" type="Boolean" access="GLOBAL" description="Is the button disabled" default="false" />
+    <aura:attribute name="xsmall" type="Boolean" default="false" description="Is the button x-small? Default is false" access="GLOBAL"/>
+    <aura:attribute name="modal" type="Boolean" default="false" description="Is this the close button on a modal? Default is false" /> 
+    
+    <aura:registerEvent name="onClick" type="c:ui_Event" description="Action to be executed when button is clicked" access="GLOBAL"/>    
+    
+	<button id="{! v.id }" onclick="{! c.onClick }" class="{! 'slds-button ' + (v.theme != null ? 'slds-button--' + v.theme : '') + (v.body.length > 0 || v.modal ? '' : ' slds-button--icon' + (v.xsmall ? '-x-small' : '')) + (v.class ? ' ' + v.class : '') }" disabled="{! v.disabled }" type="button">
+		<aura:if isTrue="{! v.iconName != '' &amp;&amp; v.iconPosition == 'left' }">
+			<c:ui_Icon iconType="{! v.iconType }" iconName="{! v.iconName }" class="{! 'slds-button__icon slds-button__icon--left slds-icon--' + v.iconSize }" iconContainer="true"></c:ui_Icon>
+		</aura:if>
+		<aura:if isTrue="{! v.iconPosition == 'center'}">
+			<c:ui_Icon iconType="{! v.iconType }" iconName="{! v.iconName }" iconSize="{! v.iconSize }" class="{! 'slds-button__icon slds-icon--' + v.iconSize }" iconContainer="true"></c:ui_Icon>
+			<aura:set attribute="else">
+				{! v.body }
+			</aura:set>
+		</aura:if>
+		<aura:if isTrue="{! v.iconName != '' &amp;&amp; v.iconPosition == 'right' }">
+			<c:ui_Icon iconType="{! v.iconType }" iconName="{! v.iconName }" iconSize="{! v.iconSize }" class="slds-button__icon slds-button__icon--right" iconContainer="true"></c:ui_Icon>
+		</aura:if>
+	</button>
+</aura:component>

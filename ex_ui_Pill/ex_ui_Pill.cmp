@@ -1,0 +1,7 @@
+<aura:component >
+	<c:ui_SLDS >
+        <c:ui_Pill label="Basic Pill" onRemove="{! c.removePill }" />
+        <c:ui_Pill label="Pill with icon" iconType="standard" iconName="account" onRemove="{! c.removePill }" />
+        <c:ui_Pill label="Pill with avatar" avatarURL="/resource/SLDS/assets/images/avatar2.jpg" onRemove="{! c.removePill }" />
+    </c:ui_SLDS>
+</aura:component>

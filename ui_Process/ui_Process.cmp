@@ -1,0 +1,68 @@
+<aura:component access="GLOBAL">
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<aura:handler name="change" value="{!v.allStages}" action="{!c.doInit}"/>
+	<aura:handler name="change" value="{!v.currentStage}" action="{!c.doInit}"/>
+
+	<aura:registerEvent name="saveStage" type="c:ui_Event" description="Event fired when input element is changed" access="GLOBAL"/>
+
+	<aura:attribute name="type" type="String" default="wizard" access="GLOBAL" description="Type of process to display, can be path or wizard"/>
+	<aura:attribute name="allStages" type="List" description="Array of stage option objects, in order of completion" access="GLOBAL"/>
+	<aura:attribute name="currentStage" type="String" description="Current active stage" access="GLOBAL"/>
+	<aura:attribute name="currentIndex" type="String" description="Index of current active stage in allStages list" access="GLOBAL"/>
+	<aura:attribute name="coaching" type="Boolean" default="false" description="Include coaching panel?" access="GLOBAL"/>
+	<aura:attribute name="coachingOpen" type="Boolean" default="false" description="Is the coaching panel open?" access="GLOBAL"/>
+
+	<aura:attribute name="selected" type="String" default="" description="Which stage is selected." access="GLOBAL"/>
+
+	<div class="{! 'slds-m-horizontal--small' + (v.coaching &amp;&amp; v.coachingOpen ? ' slds-path-coach' : '')}">
+		<aura:if isTrue="{! v.type == 'path' }">
+			<c:ui_Grid wrap="false" vertical="center" class="slds-m-around--large">
+				<aura:if isTrue="{! v.coaching }">
+					<c:ui_Button iconName="chevrondown" iconType="utility" iconSize="small" iconPosition="center" class="{! 'slds-button--icon-border-filled slds-path__trigger slds-no-flex slds-m-horizontal--small '+ ( v.coachingOpen ? 'slds-flip--vertical' : '')}" onClick="{! c.toggleCoaching }"/>
+				</aura:if>
+			  <div class="slds-tabs--path" role="application">
+			    <ul class="slds-tabs--path__nav" role="tablist">
+			    	<aura:iteration items="{!v.allStages}" var="item" indexVar="index">
+			    		<c:ui_Process_Stage currentName="{!v.currentStage}" 
+			    											currentIndex="{!v.currentIndex}"
+			    											currentSelected="{!v.selected}" 
+			    											stageName="{!item.label}"
+			    											stageIndex="{!index}"
+			    											selectStage="{! c.selectStage }"/>
+			    	</aura:iteration>
+			    </ul>
+			  </div>
+			  <c:ui_Button theme="brand" iconType="utility" iconName="check" iconPosition="left" iconSize="small" class="{!'button--border-filled slds-path__mark-complete slds-no-flex slds-m-horizontal--small ' + ( v.selected == '' ? '' : 'slds-path__mark-current' )}" onClick="{! c.saveStage }">
+			  	{! v.selected == '' ? 'Select a Stage' : 'Mark ' + v.selected + ' as Complete'}
+			  </c:ui_Button>
+			</c:ui_Grid>
+			<aura:if isTrue="{! v.coaching }">
+				<div aura:id="coachingPanel" class="{! v.coachingOpen ? '' : 'slds-hide' }">
+					<aura:iteration items="{!v.allStages}" var="item">
+						<c:ui_Process_Stage_Coach stageName="{!item.label}" currentStage="{!v.currentStage}" selectedStage="{!v.selected}" coachingContent="{!item.coachingContent}"/>
+					</aura:iteration>
+				</div>
+			</aura:if>
+		</aura:if>
+		<aura:if isTrue="{! v.type == 'wizard' }">
+			<div class="slds-wizard slds-m-around--large" role="navigation">
+		    <ol class="slds-wizard__list">
+		    	<aura:iteration items="{! v.allStages }" var="item" indexVar="index">
+		      <li class="{! 'slds-wizard__item' + (index &lt;= v.currentIndex ? ' slds-is-active' : '')}">
+		        <a href="#void" class="slds-wizard__link">
+		          <span class="slds-wizard__marker"></span>
+		          <span class="slds-wizard__label slds-text-heading--label slds-truncate">{! item.label }</span>
+		        </a>
+		      </li>
+		    	</aura:iteration>
+		    </ol>
+		    <span class="slds-wizard__progress">
+		      <span class="slds-wizard__progress-bar" style="{! 'width:' + (v.currentIndex * (100 / (v.allStages.length - 1))) + '%;' }"></span>
+		    </span>
+		  </div>
+		</aura:if>
+	</div>
+
+</aura:component>

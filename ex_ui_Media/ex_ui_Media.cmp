@@ -1,0 +1,23 @@
+<aura:component access="GLOBAL">
+	<c:ui_SLDS >
+        <div class="reduce-width">
+            <c:ui_Media >
+                <aura:set attribute="figure">
+                    <c:ui_Image src="/resource/slds/assets/images/avatar3.jpg" size="large" alt="Avatar" />
+                </aura:set>
+                <h1 class="bold">Basic Media Object</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat minus molestias reprehenderit consequuntur sapiente. Modi veritatis totam accusantium numquam assumenda.</p>
+            </c:ui_Media>
+            
+            <div class="divider"></div>
+            
+            <c:ui_Media >
+                <aura:set attribute="figureReverse">
+                    <c:ui_Image src="/resource/slds/assets/images/avatar1.jpg" size="large" alt="Avatar" />
+                </aura:set>
+                <h1 class="bold">Reversed Media Object</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat minus molestias reprehenderit consequuntur sapiente. Modi veritatis totam accusantium numquam assumenda.</p>
+            </c:ui_Media>
+        </div>
+    </c:ui_SLDS>
+</aura:component>

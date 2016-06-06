@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>Badge component in SLDS</aura:description>
+	<aura:example name="Badge" ref="c:ex_ui_Badge" label="Badge">
+        <p>This example shows a simple setup of the <code>c:ui_Badge</code> component.</p>
+	</aura:example>
+</aura:documentation>

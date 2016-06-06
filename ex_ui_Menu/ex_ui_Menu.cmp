@@ -1,0 +1,114 @@
+<aura:component access="GLOBAL">
+    
+    <aura:attribute name="menuItem" type="String" default="" description="The name of the menu item which is selected" access="GLOBAL" />
+    
+    <c:ui_SLDS >
+        <c:ui_Grid >
+            <c:ui_Col size="2" />
+            <c:ui_Col size="2">
+                <c:ui_Menu>
+                    <c:ui_Menu_Item label="Menu Item 1" />
+                    <c:ui_Menu_Item label="Menu Item 2" />
+                    <c:ui_Menu_Item label="Menu Item 3" />
+                    <c:ui_Menu_Separator />
+                    <c:ui_Menu_Item label="Menu Item 4" />
+                </c:ui_Menu>
+                <div>
+                    <h1>Simple Menu</h1>
+                </div>
+            </c:ui_Col>
+            
+            <c:ui_Col size="2">
+                <c:ui_Menu size="large">
+                    <c:ui_Menu_Header label="Sub Menu 1">
+                        <c:ui_Menu_Item label="Menu Item 1" />
+                        <c:ui_Menu_Item label="Menu Item 2" />
+                        <c:ui_Menu_Item label="Menu Item 3" />
+                    </c:ui_Menu_Header>
+                    <c:ui_Menu_Header label="Sub Menu 2">
+                        <c:ui_Menu_Item label="Menu Item 4" />
+                        <c:ui_Menu_Item label="Menu Item 5" />
+                        <c:ui_Menu_Separator />
+                        <c:ui_Menu_Item label="Menu Item 6" />
+                    </c:ui_Menu_Header>
+                </c:ui_Menu>
+                <div>
+                    <h1>Menu with Size and Headers</h1>
+                </div>
+            </c:ui_Col>
+            
+            <c:ui_Col size="2">    
+                <c:ui_Menu items="File,Save,Save As,--,Exit" />
+                <div>
+                    <h1>Generated Menu</h1>
+                </div>
+            </c:ui_Col>
+            
+            <c:ui_Col size="2">   
+                <c:ui_Menu >
+                    <c:ui_Menu_Item label="Table View" rightIconType="utility" rightIconName="table" />
+                    <c:ui_Menu_Item label="Kanban Board" rightIconType="utility" rightIconName="kanban" />
+                    <c:ui_Menu_Item label="List View" rightIconType="utility" rightIconName="side_list" />
+                </c:ui_Menu>
+                <div>
+                    <h1>Menu with Icons on Right</h1>
+                </div>
+            </c:ui_Col>
+            
+            <c:ui_Col size="2"> 
+                <c:ui_Menu >
+                    <c:ui_Menu_Item label="Menu Item One" leftIconType="utility" leftIconName="check" />
+                    <c:ui_Menu_Item label="Menu Item Two" leftIconType="utility" leftIconName="check" leftIconSelected="true" />
+                    <c:ui_Menu_Item label="Menu Item Three" leftIconType="utility" leftIconName="check" />
+                </c:ui_Menu>
+                <div>
+                    <h1>Menu with Icons on Left</h1>
+                </div>
+            </c:ui_Col>
+            
+            <c:ui_Col size="2" />
+            
+            <c:ui_Col size="2">
+                <c:ui_Menu positionVertical="bottom" positionHorizontal="right">
+                    <c:ui_Menu_Item label="Menu Item 1" />
+                    <c:ui_Menu_Item label="Menu Item 2" />
+                    <c:ui_Menu_Item label="Menu Item 3" />
+                    <c:ui_Menu_Separator />
+                    <c:ui_Menu_Item label="Menu Item 4" />
+                </c:ui_Menu>
+                <div>
+                    <h1>Menu with Positioning</h1>
+                </div>
+            </c:ui_Col>
+            
+            <c:ui_Col size="2">
+                <c:ui_Menu nubbin="true" iconType="utility" iconName="settings" buttonClass="slds-button slds-button--icon-container">
+                    <c:ui_Menu_Item label="Menu Item 1" />
+                    <c:ui_Menu_Item label="Menu Item 2" />
+                    <c:ui_Menu_Item label="Menu Item 3" />
+                    <c:ui_Menu_Separator />
+                    <c:ui_Menu_Item label="Menu Item 4" />
+                </c:ui_Menu>
+                <div>
+                    <h1>Menu with Different Icon and Nubbin</h1>
+                </div>
+            </c:ui_Col>
+            
+            <c:ui_Col size="2">  
+                <c:ui_Menu onClick="{! c.menuItemClicked }">
+                    <c:ui_Menu_Item label="Menu Item 1" />
+                    <c:ui_Menu_Item label="Menu Item 2" />
+                    <c:ui_Menu_Item label="Menu Item 3" />
+                    <c:ui_Menu_Separator />
+                    <c:ui_Menu_Item label="Menu Item 4" />
+                </c:ui_Menu>
+                <div>
+                    <h1>Menu with Event</h1>
+                    <aura:if isTrue="{! v.menuItem != ''}">
+                        <p>{! v.menuItem } was clicked</p>
+                    </aura:if>
+                </div>
+            </c:ui_Col>
+        </c:ui_Grid>
+    </c:ui_SLDS>
+</aura:component>

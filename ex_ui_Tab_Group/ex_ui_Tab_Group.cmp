@@ -1,0 +1,20 @@
+<aura:component access="GLOBAL">
+    <c:ui_SLDS >
+    	<c:ui_Tab_Group >
+            <c:ui_Tab label="Tab 1" active="true">
+                <p>These are the contents of tab 1</p>
+            </c:ui_Tab>
+            <c:ui_Tab label="Tab 2">
+                <p>These are the contents of tab 2</p>
+            </c:ui_Tab>
+        </c:ui_Tab_Group>
+        <c:ui_Tab_Group type="scoped">
+            <c:ui_Tab label="Scoped Tab 1" active="true">
+                <p>These are the contents of tab 1</p>
+            </c:ui_Tab>
+            <c:ui_Tab label="Scoped Tab 2">
+                <p>These are the contents of tab 2</p>
+            </c:ui_Tab>
+        </c:ui_Tab_Group>
+    </c:ui_SLDS>
+</aura:component>

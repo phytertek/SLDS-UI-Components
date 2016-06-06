@@ -1,0 +1,15 @@
+<aura:component access="GLOBAL" implements="c:ui_int_HTML_Attributes,c:ui_int_Icon_Attributes">
+    
+    <aura:attribute name="label" type="String" default="" description="Label of the item" access="GLOBAL" />
+    <aura:attribute name="iconClass" type="String" default="" description="Class to be added to the icon." access="GLOBAL" />
+    <aura:attribute name="data" type="Object" default="{}" description="Lookup item's associated data." access="GLOBAL" />
+    
+    <aura:registerEvent name="onClick" type="c:ui_Event" description="Called when clicked" access="GLOBAL" />
+    
+	<li class="{! 'slds-lookup__item ' + v.class }" id="{! v.id }" onclick="{! c.onClick }">
+        <a id="s01" href="#" role="option">
+            <aura:if isTrue="{! v.iconName != '' }">
+                <c:ui_Icon iconType="{! v.iconType }" iconName="{! v.iconName }" iconSize="{! v.iconSize }" iconContainer="{! v.iconContainer }" iconContainerClass="{! v.iconContainerClass }" class="{! v.iconClass }"/>
+            </aura:if>{! v.label }</a>
+    </li>
+</aura:component>

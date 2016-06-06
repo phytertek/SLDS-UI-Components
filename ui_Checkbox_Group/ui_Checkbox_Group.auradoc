@@ -1,0 +1,5 @@
+<aura:documentation>
+	<aura:description>Multi checkbox component. Creates multiple checkboxes based on the labels and values provided. The labels property is a list of labels and the values property is a list of booleans indicating whether the checkbox was checked.</aura:description>
+	<aura:example name="Checkbox_Group" ref="c:ex_ui_Checkbox_Group" label="Checkbox Group">
+	</aura:example>
+</aura:documentation>

@@ -1,0 +1,48 @@
+<aura:component access="GLOBAL">
+	<c:ui_SLDS >
+        <c:ui_Grid class="margin-left">
+            
+            <c:ui_Col />
+            
+            <c:ui_Col >
+                Medium (Default)
+            	<c:ui_Image src="/resource/SLDS/assets/images/avatar2.jpg" alt="Avatar" />
+            </c:ui_Col>
+            
+            <c:ui_Col >
+                X-Small
+            	<c:ui_Image src="/resource/SLDS/assets/images/avatar2.jpg" alt="Avatar" size="x-small" />
+            </c:ui_Col>
+            
+            <c:ui_Col >
+                Small
+            	<c:ui_Image src="/resource/SLDS/assets/images/avatar2.jpg" alt="Avatar" size="small" />
+            </c:ui_Col>
+            
+            <c:ui_Col >
+                Large
+            	<c:ui_Image src="/resource/SLDS/assets/images/avatar2.jpg" alt="Avatar" size="large" />
+            </c:ui_Col>
+            
+            <c:ui_Col >
+                Medium (Default)
+            	<c:ui_Image circle="true" src="/resource/SLDS/assets/images/avatar2.jpg" alt="Avatar" />
+            </c:ui_Col>
+            
+            <c:ui_Col >
+                X-Small
+            	<c:ui_Image circle="true" src="/resource/SLDS/assets/images/avatar2.jpg" alt="Avatar" size="x-small" />
+            </c:ui_Col>
+            
+            <c:ui_Col >
+                Small
+            	<c:ui_Image circle="true" src="/resource/SLDS/assets/images/avatar2.jpg" alt="Avatar" size="small" />
+            </c:ui_Col>
+            
+            <c:ui_Col >
+                Large
+            	<c:ui_Image circle="true" src="/resource/SLDS/assets/images/avatar2.jpg" alt="Avatar" size="large" />
+            </c:ui_Col>
+        </c:ui_Grid>
+    </c:ui_SLDS>
+</aura:component>
